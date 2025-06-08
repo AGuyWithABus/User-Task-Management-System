@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 class ApiService {
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -87,10 +87,9 @@ class ApiService {
   // Message endpoints
   async sendMessage(messageData: {
     sender_id: number;
-    recipient_id?: number;
-    task_id?: number;
+    recipient_id: number;
     content: string;
-    message_type: 'direct' | 'task_comment';
+    message_type: 'direct';
   }): Promise<any> {
     return this.request<any>('/messages', {
       method: 'POST',
