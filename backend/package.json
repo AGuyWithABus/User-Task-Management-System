@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "nodemon --exec ts-node src/server.ts"
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "postinstall": "npm run build"
   },
   "keywords": ["task-management", "user-management", "messaging", "api"],
   "author": "",
