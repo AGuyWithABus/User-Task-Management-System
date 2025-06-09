@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://user-task-management-system-backend.onrender.com';
 
 class ApiService {
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
