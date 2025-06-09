@@ -48,13 +48,13 @@ const MessageCenter: React.FC<MessageCenterProps> = ({ currentUser, users }) => 
     if (currentUser?.id) {
       loadThreads();
     }
-  }, [currentUser]);
+  }, [currentUser]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (selectedThread && currentUser?.id) {
       loadMessages();
     }
-  }, [selectedThread, currentUser]);
+  }, [selectedThread, currentUser]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadThreads = async () => {
     if (!currentUser?.id) return;

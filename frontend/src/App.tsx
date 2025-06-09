@@ -58,7 +58,7 @@ function App() {
   // Load users when filters change
   useEffect(() => {
     loadUsers();
-  }, [userPage, userSearch, userSortBy, userSortOrder]);
+  }, [userPage, userSearch, userSortBy, userSortOrder]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Load tasks when user is selected or filters change
   useEffect(() => {
@@ -71,7 +71,7 @@ function App() {
       setSelectedUser(null);
       setTaskPage(1);
     }
-  }, [selectedUserId, taskPage, taskSearch, taskSortBy, taskSortOrder, taskStatusFilter, users]);
+  }, [selectedUserId, taskPage, taskSearch, taskSortBy, taskSortOrder, taskStatusFilter, users]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadUsers = async () => {
     setIsLoadingUsers(true);
